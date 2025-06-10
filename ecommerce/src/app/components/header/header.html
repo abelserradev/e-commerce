@@ -7,6 +7,19 @@
       <button class="search-button" (click)="toggleSearch()">
          <fa-icon [icon]="faSearch"></fa-icon>
       </button>
+      @if (isSearchVisible) {
+        <div class="search-container">
+          <input 
+            type="text" 
+            placeholder="Buscar producto..." 
+            class="search-input"
+            [(ngModel)]="searchQuery"
+            (keyup.enter)="search()"
+            #searchInput
+          >
+          <button (click)="search()">Buscar</button>
+       </div>
+    }
       <div class="cart">
         <fa-icon [icon]="faShoppingCart"></fa-icon>
         <span class="cart-count">{{ cartItemsCount }}</span>
@@ -22,27 +35,11 @@
       <li><a href="">CONTACTO</a></li>
     </ul>
 
-
-   <div class="header__social">
+   <div class="social">
     <a href="#"><fa-icon [icon]="faInstagram"></fa-icon></a>
     <a href="#"><fa-icon [icon]="faFacebook"></fa-icon></a>
     <a href="#"><fa-icon [icon]="faYoutube"></fa-icon></a>
    </div>
-
-      @if (isSearchVisible) {
-        <div class="search-container">
-          <input 
-            type="text" 
-            placeholder="Buscar producto..." 
-            class="search-input"
-            [(ngModel)]="searchQuery"
-            (keyup.enter)="search()"
-            #searchInput
-          >
-          <button (click)="search()">Buscar</button>
-       </div>
-    }
-    
   </nav>
 
 </header>

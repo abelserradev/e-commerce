@@ -76,7 +76,10 @@
   }
 
   .social {
-    display: none; /* Oculto en desktop (puede mostrarse en móvil) */
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
   }
 
  .search-container {

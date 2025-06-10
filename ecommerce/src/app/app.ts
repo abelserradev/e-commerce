@@ -12,7 +12,7 @@ import { faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg
   styleUrl: './app.scss'
 })
 export class App {
-  protected title = 'ecommerce';
+  protected title = 'LuncheriaYusmila';
   faSearch = faSearch;
   faShoppingCart = faShoppingCart;
   faInstagram = faInstagram;
