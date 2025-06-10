@@ -47,9 +47,18 @@
     }
 
     .slide-title {
-        font-size: 3rem;
+        font-size: 2rem;
         margin-bottom: 1rem;
+        margin-top: 350px;
+        line-height: 1.2;
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+
+        span {
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
     }
 
     .btn-buy {

@@ -13,17 +13,17 @@ export class SliderService {
             {
                 url: 'https://picsum.photos/id/1018/1920/1080', 
                 alt: 'Oferta 1',
-                title: '¡Gran oferta de empanadas!'
+                title: '16 años acompañando tus mañanas. <br> <span>⏰ Lunes a Sábados - 6:30am a la 2:00pm</span>'
             },
             {
                 url: 'https://picsum.photos/id/1015/1920/1080', 
                 alt: 'Oferta 2',
-                title: 'Prueba nuestras nuevas recetas'
+                title: '16 años acompañando tus mañanas. <br> <span>⏰ Lunes a Sábados - 6:30am a la 2:00pm</span>'
             },
             {
                 url: 'https://picsum.photos/id/1016/1920/1080', 
                 alt: 'Oferta 3',
-                title: 'Compra en línea y recibe rápido'
+                title: '16 años acompañando tus mañanas. <br> <span>⏰ Lunes a Sábados - 6:30am a la 2:00pm</span>'
             }
         ];
     }

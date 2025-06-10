@@ -4,7 +4,7 @@
             <div [class.active]="$index === currentIndex" class="slide">
                 <img src="image.url" class="slide-image">
                 <div class="slide-content">
-                    <h1 class="slide-title">{{ image.title }}</h1>
+                    <h1 class="slide-title" [innerHTML]="image.title"></h1>
                     <button class="btn btn-buy">Solicitar</button>
                 </div>
             </div>
