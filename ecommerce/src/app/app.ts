@@ -4,10 +4,11 @@ import { Header } from "./components/header/header";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { Main } from './pages/main/main';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, FontAwesomeModule],
+  imports: [RouterOutlet, Header, FontAwesomeModule, Main],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

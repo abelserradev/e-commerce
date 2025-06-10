@@ -1,7 +1,7 @@
-import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms'; 
-import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { CommonModule } from '@angular/common';
 
@@ -16,44 +16,55 @@ import { CommonModule } from '@angular/common';
 export class Header {
   faSearch = faSearch;
   faShoppingCart = faShoppingCart;
+  faBars = faBars;
   faInstagram = faInstagram;
   faFacebook = faFacebook;
   faYoutube = faYoutube;
+  cartItemscount = 0; // Contador de artículos en el carrito
 
-  cartItemsCount: number = 0;
-  showSearch: boolean = false;
-
+  // Estados
   isSearchVisible = false;
+  isMobileMenuOpen = false;
+  screenWidth!: number;
   searchQuery = '';
 
+  // Valores responsivos
+  get isMobile(): boolean {
+    return this.screenWidth <= 768;
+  }
+
+  get isDesktop(): boolean {
+    return this.screenWidth > 768;
+  }
+
+  constructor() {
+    this.screenWidth = window.innerWidth;
+  }
+
+  ngOnInit(): void {
+    this.screenWidth = window.innerWidth;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    this.screenWidth = event.target.innerWidth;
+    if (this.screenWidth > 768) {
+      this.isMobileMenuOpen = false; // Cerrar menú móvil al agrandar pantalla
+    }
+  }
+
   toggleSearch() {
-      this.isSearchVisible = !this.isSearchVisible;
-      if (this.isSearchVisible) {
-        setTimeout(() => {
-          const searchInput = document.querySelector('.search-input') as HTMLInputElement;
-          searchInput?.focus();
-        }, 0);
-      }
-    }
+    this.isSearchVisible = !this.isSearchVisible;
+  }
 
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 
-  //metodo para manejar las busquedas
   search() {
-    if (this.searchQuery.trim()) {
-      console.log('buscando', this.searchQuery);
-      
-    }
-    this.isSearchVisible = false;
+  if (this.searchQuery.trim()) {
+    console.log('Buscando:', this.searchQuery);
+    // Aquí puedes llamar a un servicio o navegar a otra página
   }
-
-   
-  @ViewChild('searchContainer') searchContainer!: ElementRef;
-
-  @HostListener('document:click', ['$event'])
-  onClick(event: MouseEvent) {
-    if (!this.searchContainer.nativeElement.contains(event.target)) {
-      this.isSearchVisible = false;
-    }
-  }
-
+}
 }
