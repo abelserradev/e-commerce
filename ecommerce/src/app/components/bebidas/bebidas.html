@@ -1,0 +1,24 @@
+<div class="drink-detail-container">
+  @if (loading) {
+    <div class="loading-spinner">Cargando...</div>
+  }
+  @else if (error || !drink) {
+    <div class="error-message">
+      <h2>Bebida no encontrada</h2>
+      <button routerLink="/">Volver al inicio</button>
+    </div>
+  }
+  @else {
+    <div class="drink-card">
+      <img [src]="drink.imageUrl" class="drink-image">
+      <div class="drink-info">
+        <h2>{{ drink.name }}</h2>
+        <p class="price">{{ drink.price | currency }}</p>
+        <p class="description">{{ drink.description || 'Descripcion no disponible' }}</p>
+        <button class="add-to-cart" (click)="addToCart(drink)">
+          <fa-icon [icon]="faCartPlus"></fa-icon>Añadir al carrito
+        </button>
+      </div>
+    </div>
+  }
+</div>

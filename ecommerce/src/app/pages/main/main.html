@@ -2,7 +2,7 @@
     <div class="slider">
         @for (image of images; track $index) {
             <div [class.active]="$index === currentIndex" class="slide">
-                <img src="image.url" class="slide-image">
+                <img [src]="image.url" class="slide-image">
                 <div class="slide-content">
                     <h1 class="slide-title" [innerHTML]="image.title"></h1>
                     <button class="btn btn-buy">Solicitar</button>
@@ -11,3 +11,62 @@
         }
     </div>
 </section>
+
+<section class="intro-section">
+    <div class="container">
+        <h2 class="section-title">/ Nuestros Productos Mas Vendidos</h2>
+    </div>
+</section>
+
+<section class="featured-products">
+    <div class="container">
+        <div class="products-grid">
+            @for (product of bestSellers; track product.id) {
+                <div class="product-card">
+                    <img [src]="product.imageUrl" [alt]="product.name" class="product-image">
+                    <h3 class="product-title">{{ product.name }}</h3>
+                    <p class="product-price">{{ product.price | currency }}</p>
+                    <button class="btn btn-buy">Agregar al carrito</button>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="mas-products">
+  <div class="container">
+    <div class="divider-line"></div>
+    <button class="btn btn-more" (click)="gotoProducts()">
+      Ver mas
+    </button>
+  </div>
+</section>
+
+<!-- <section class="bebidas-section">
+    <div class="container">
+      <h2 class="section-title">/ Nuestras Bebidas</h2>
+      <p class="section-subtitle">Descubre nuestra selección premium</p>
+
+      <div class="bebidas-grid">
+        @for (drink of featuredDrinks; track drink.id) {
+          <div class="tarjeta-bebida">
+            <p>URL: {{ drink.imageUrl }}</p>
+            <img [src]="drink.imageUrl" class="img-bebida">
+            <div class="bebida-overlay">
+              <h3 class="titulo-bebida">{{ drink.name }}</h3>
+              <p class="precio-bebida">{{ drink.price | currency }}</p>
+
+              <div class="action-bebidas">
+                <button class="btn-action" (click)="addToCart(drink)" aria-label="Añadir al carrito">
+                  <fa-icon [icon]="faCartPlus"></fa-icon>
+                </button>
+                <button class="btn-action" (click)="viewDetails(drink.id)" aria-label="Ver detalles">
+                  <fa-icon [icon]="faEye"></fa-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+</section> -->

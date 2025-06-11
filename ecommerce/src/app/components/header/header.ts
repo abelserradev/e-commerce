@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 import { faBars, faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { CommonModule } from '@angular/common';
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule,FaIconComponent, FormsModule],
+  imports: [CommonModule, FaIconComponent, FormsModule],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
@@ -27,6 +27,7 @@ export class Header {
   isMobileMenuOpen = false;
   screenWidth!: number;
   searchQuery = '';
+
 
   // Valores responsivos
   get isMobile(): boolean {
@@ -67,4 +68,5 @@ export class Header {
     // Aquí puedes llamar a un servicio o navegar a otra página
   }
 }
+
 }
