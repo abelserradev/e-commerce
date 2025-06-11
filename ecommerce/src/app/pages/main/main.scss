@@ -83,7 +83,7 @@
     padding: 3rem 0;
     text-align: center;
     background-color: #f5f5f5;
-    
+
     .section-title {
         font-size: 2rem;
         margin-bottom: 1.5rem;
@@ -97,46 +97,46 @@
 .featured-products {
     padding: 3rem 0;
     background-color: #f8f9fa;
-    
+
     .container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 1rem;
     }
-    
+
     .products-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 2rem;
         margin-top: 2rem;
     }
-    
+
     .product-card {
         background: white;
         border-radius: 8px;
         overflow: hidden;
         box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         transition: all 0.3s ease;
-        
+
         &:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
     }
-    
+
     .product-image {
         width: 100%;
         height: 200px;
         object-fit: cover;
     }
-    
+
     .product-title {
         font-size: 1.2rem;
         margin: 1rem;
         color: #333;
         text-align: center;
     }
-    
+
     .product-price {
         font-size: 1.3rem;
         font-weight: bold;
@@ -144,7 +144,7 @@
         color: #e63946;
         text-align: center;
     }
-    
+
     .btn-buy {
         display: block;
         width: calc(100% - 2rem);
@@ -157,7 +157,7 @@
         cursor: pointer;
         transition: background 0.3s;
         font-weight: bold;
-        
+
         &:hover {
             background: #deb10c;
         }
@@ -196,7 +196,7 @@
         font-size: 1rem;
         cursor: pointer;
         transition: all 0.3s ease;
-        
+
         &:hover {
             background-color: #deb10c;
             border-color: #deb10c;
@@ -215,13 +215,13 @@
     margin-bottom: 0.5rem;
     color: #deb10c;
   }
-  
+
   .section-subtitle{
     text-align: center;
     color: #deb10c;
     margin-bottom: 2rem;
   }
-  
+
   .bebidas-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -229,7 +229,7 @@
     padding: 1rem;
   }
 
-  .tarjeta-bebidas {
+  .tarjeta-bebida {
     position: relative;
     border-radius: 8px;
     overflow: hidden;
@@ -297,12 +297,12 @@
         justify-content: center;
         cursor: pointer;
         transition: all 0.3s ease;
-        
+
         &:hover {
             background: white;
             transform: scale(1.1);
         }
-        
+
         fa-icon {
             color: #333;
             font-size: 1rem;
@@ -335,7 +335,7 @@
       font-size: 1.2rem; // Tamaño más adecuado
       margin-top: 150px; // Menos margen superior
       line-height: 1.3;
-      
+
       span {
         font-size: 0.9rem; // Tamaño para el subtítulo
       }
@@ -349,11 +349,11 @@
 
   .drinks-section {
         padding: 2rem 0;
-        
+
         .drinks-grid {
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
         }
-        
+
         .drink-image {
             height: 250px;
         }
@@ -369,7 +369,7 @@
     .slide-title {
       font-size: 1.1rem; // Tamaño preciso para 390px
       margin-top: 120px;
-      
+
       span {
         font-size: 0.8rem;
       }
@@ -397,7 +397,7 @@
 @media (max-width: 768px) {
     .more-products {
         padding: 2rem 0;
-        
+
         .btn-more {
             padding: 0.5rem 1.5rem;
             font-size: 0.9rem;
