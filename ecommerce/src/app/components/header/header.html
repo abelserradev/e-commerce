@@ -1,8 +1,23 @@
 <header class="header">
   <div class="top">
     <div class="title-container">
-      <h1 class="title">Luncheria Yusmila</h1>
+      <div class="img-container">
+        <img src="/assets/img/Logo.png" class="prueba">
+      </div>
     </div>
+    <h1 class="title">Luncheria Yusmila</h1>
+  </div>
+
+
+  <nav class="nav">
+    @if (!isMobileMenuOpen && isDesktop) {
+      <ul class="nav-list desktop section-subtitle">
+        <li><a routerLink="/main">INICIO</a></li>
+        <li><a routerLink="/productos">PRODUCTOS</a></li>
+        <li><a routerLink="">UBICACION</a></li>
+        <li><a routerLink="">CONTACTOS</a></li>
+      </ul>
+    }
     <div class="icons">
       <button class="search-button" (click)="toggleSearch()">
         <fa-icon [icon]="faSearch"></fa-icon>
@@ -13,55 +28,48 @@
           <button (click)="search()">Buscar</button>
         </div>
       }
+    </div>
 
-      @if (isMobile) {
-        <button class="menu-toggle" (click)="toggleMobileMenu()">
-          <fa-icon [icon]="faBars"></fa-icon>
-        </button>
+    @if (isDesktop){
+      <div class="cart desktop-cart" routerLink="/carrito">
+        <fa-icon [icon]="faShoppingCart"></fa-icon>
+         @if (cartItemscount > 0) {
+           <span class="cart-count">{{ cartItemscount }}</span>
+         }
+       </div>
+    }
+
+   @if (isMobile) {
+     <button class="menu-toggle" (click)="toggleMobileMenu()">
+       <fa-icon [icon]="faBars"></fa-icon>
+     </button>
+   }
+
+
+    @if (isMobileMenuOpen && isMobile) {
+      <ul class="nav-list mobile section-subtitle">
+        <li><a routerLink="/main">INICIO</a></li>
+          <li><a routerLink="/productos">PRODUCTOS</a></li>
+          <li><a routerLink="">UBICACION</a></li>
+          <li><a routerLink="">CONTACTOS</a></li>
+        </ul>
       }
 
-    </div>
-  </div>
-
-  <nav class="nav">
-    @if (!isMobileMenuOpen && isDesktop) {
-      <ul class="nav-list desktop">
-        <li><a href="">INICIO</a></li>
-        <li><a href="">PRODUCTOS</a></li>
-        <li><a href="">UBICACION</a></li>
-        <li><a href="">CONTACTOS</a></li>   
-      </ul>
-    }
-
-    @if (isMobileMenuOpen && isMobile) {
-        <ul class="nav-list mobile">
-          <li><a href="">INICIO</a></li>
-          <li><a href="">PRODUCTOS</a></li>
-          <li><a href="">UBICACION</a></li>
-          <li><a href="">CONTACTOS</a></li>
-        </ul>
-    }
-
-    @if (isMobileMenuOpen && isMobile) {
-      <div class="mobile-footer">
-        <div class="cart">
-          <fa-icon [icon]="faShoppingCart"></fa-icon>
-          <span class="cart-count">{{ cartItemscount }}</span>
+      @if (isMobileMenuOpen && isMobile) {
+        <div class="mobile-footer">
+          <div class="cart">
+            <fa-icon [icon]="faShoppingCart"></fa-icon>
+            <span class="cart-count">{{ cartItemscount }}</span>
+          </div>
+          <div class="social">
+            <a href=""><fa-icon [icon]="faInstagram"></fa-icon></a>
+            <a href=""><fa-icon [icon]="faFacebook"></fa-icon></a>
+            <a href=""><fa-icon [icon]="faYoutube"></fa-icon></a>
+          </div>
         </div>
-        <div class="social">
-          <a href=""><fa-icon [icon]="faInstagram"></fa-icon></a>
-          <a href=""><fa-icon [icon]="faFacebook"></fa-icon></a>
-          <a href=""><fa-icon [icon]="faYoutube"></fa-icon></a>
-        </div>
-      </div>
-    }
+      }
 
-    @if (isDesktop) {
-      <div class="social desktop">
-        <a href=""><fa-icon [icon]="faInstagram"></fa-icon></a>
-        <a href=""><fa-icon [icon]="faFacebook"></fa-icon></a>
-        <a href=""><fa-icon [icon]="faYoutube"></fa-icon></a>
-      </div>
-    }
+
+
   </nav>
 </header>

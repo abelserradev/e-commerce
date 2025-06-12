@@ -206,43 +206,50 @@
     }
 }
 
+// estilos para las bebidas
+
 .bebidas-section {
   padding: 4rem 0;
   background-color: #f5f5f5;
 
-  .section-title {
-    text-align: center;
-    margin-bottom: 0.5rem;
-    color: #deb10c;
-  }
+  .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .section-subtitle{
+  .section-title,
+  .section-subtitle {
     text-align: center;
     color: #deb10c;
-    margin-bottom: 2rem;
   }
 
   .bebidas-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
+    justify-items: center; // Centra las tarjetas horizontalmente
     padding: 1rem;
   }
 
   .tarjeta-bebida {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
     position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    will-change: transform, opacity;
 
     &:hover {
       transform: translateY(-5px);
 
-      .bebida-overlay{
+      .bebida-overlay {
         opacity: 1;
       }
     }
+  }
+
+  .tarjeta-bebida.show {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .img-bebida {
@@ -256,16 +263,16 @@
     position: absolute;
     top: 0;
     left: 0;
-       right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.7);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        padding: 1rem;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
   }
 
   .titulo-bebida {
@@ -287,30 +294,28 @@
   }
 
   .btn-action {
-        background: rgba(255,255,255,0.9);
-        border: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
 
-        &:hover {
-            background: white;
-            transform: scale(1.1);
-        }
-
-        fa-icon {
-            color: #333;
-            font-size: 1rem;
-        }
+    &:hover {
+      background: white;
+      transform: scale(1.1);
     }
 
+    fa-icon {
+      color: #333;
+      font-size: 1rem;
+    }
+  }
 }
-
 
 // para dispositivos mobiles
 

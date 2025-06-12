@@ -47,9 +47,9 @@
       <h2 class="section-title">/ Nuestras Bebidas</h2>
       <p class="section-subtitle">Descubre nuestra selección premium</p>
 
-      <div class="bebidas-grid">
+      <div class="bebidas-grid" id="bebidas-section">
         @for (drink of featuredDrinks; track drink.id) {
-          <div class="tarjeta-bebida">
+          <div class="tarjeta-bebida" appScrollAnim>
             <img [src]="drink.imageUrl" class="img-bebida">
             <div class="bebida-overlay">
               <h3 class="titulo-bebida">{{ drink.name }}</h3>

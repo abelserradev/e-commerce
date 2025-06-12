@@ -12,7 +12,8 @@ export class DrinkService {
         name: 'Refresco Pepsi',
         price: 3,
         imageUrl: 'https://picsum.photos/id/1018/1920/1080',
-        category: 'Gaseosa'
+        category: 'refrescos',
+        isFeatured: true
       },
       {
         id: 2,
@@ -20,6 +21,14 @@ export class DrinkService {
         price: 3.50,
         imageUrl: 'https://picsum.photos/id/1015/1920/1080',
         category: 'refrescos',
+        isFeatured: true
+      },
+         {
+        id: 3,
+        name: 'Jugo de Mora',
+        price: 1.50,
+        imageUrl: 'https://picsum.photos/id/1015/1920/1080',
+        category: 'Jugos',
         isFeatured: true
       },
       // Se puede agregar mas bebidas

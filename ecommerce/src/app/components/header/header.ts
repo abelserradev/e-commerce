@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { faBars, faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, FaIconComponent, FormsModule],
+  imports: [CommonModule, FaIconComponent, FormsModule, RouterModule],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })

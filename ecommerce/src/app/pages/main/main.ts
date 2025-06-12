@@ -9,11 +9,12 @@ import { Router } from '@angular/router';
 import { DrinkService } from '../../services/drink.service';
 import { faCartPlus, faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ScrollAnimDirective } from '../../scroll-anim.directive';
 
 
 @Component({
   selector: 'app-main',
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule, ScrollAnimDirective],
   templateUrl: './main.html',
   styleUrl: './main.scss'
 })
