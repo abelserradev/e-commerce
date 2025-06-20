@@ -18,6 +18,7 @@
         <li><a routerLink="">CONTACTOS</a></li>
       </ul>
     }
+
     <div class="icons">
       <button class="search-button" (click)="toggleSearch()">
         <fa-icon [icon]="faSearch"></fa-icon>
@@ -28,35 +29,34 @@
           <button (click)="search()">Buscar</button>
         </div>
       }
+      @if (isDesktop){
+        <div class="cart desktop-cart" routerLink="/carrito">
+          <fa-icon [icon]="faShoppingCart"></fa-icon>
+          @if (cartItemscount > 0) {
+            <span class="cart-count">{{ cartItemscount }}</span>
+          }
+        </div>
+      }
     </div>
 
-    @if (isDesktop){
-      <div class="cart desktop-cart" routerLink="/carrito">
-        <fa-icon [icon]="faShoppingCart"></fa-icon>
-         @if (cartItemscount > 0) {
-           <span class="cart-count">{{ cartItemscount }}</span>
-         }
-       </div>
+    @if (isMobile) {
+      <button class="menu-toggle" (click)="toggleMobileMenu()">
+        <fa-icon [icon]="faBars"></fa-icon>
+      </button>
     }
-
-   @if (isMobile) {
-     <button class="menu-toggle" (click)="toggleMobileMenu()">
-       <fa-icon [icon]="faBars"></fa-icon>
-     </button>
-   }
 
 
     @if (isMobileMenuOpen && isMobile) {
       <ul class="nav-list mobile section-subtitle">
         <li><a routerLink="/main">INICIO</a></li>
-          <li><a routerLink="/productos">PRODUCTOS</a></li>
-          <li><a routerLink="">UBICACION</a></li>
-          <li><a routerLink="">CONTACTOS</a></li>
-        </ul>
-      }
+        <li><a routerLink="/productos">PRODUCTOS</a></li>
+        <li><a routerLink="">UBICACION</a></li>
+        <li><a routerLink="">CONTACTOS</a></li>
+      </ul>
+    }
 
-      @if (isMobileMenuOpen && isMobile) {
-        <div class="mobile-footer">
+    @if (isMobileMenuOpen && isMobile) {
+      <div class="mobile-footer">
           <div class="cart">
             <fa-icon [icon]="faShoppingCart"></fa-icon>
             <span class="cart-count">{{ cartItemscount }}</span>

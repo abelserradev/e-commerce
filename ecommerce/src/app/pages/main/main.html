@@ -12,13 +12,11 @@
     </div>
 </section>
 
-<section class="intro-section">
-    <div class="container">
+
+<section class="featured-products fondo">
+    <div class="container intro-section">
         <h2 class="section-title">/ Nuestros Productos Mas Vendidos</h2>
     </div>
-</section>
-
-<section class="featured-products">
     <div class="container">
         <div class="products-grid">
             @for (product of bestSellers; track product.id) {
@@ -33,7 +31,7 @@
     </div>
 </section>
 
-<section class="mas-products">
+<section class="mas-products fondo">
   <div class="container">
     <div class="divider-line"></div>
     <button class="btn btn-more" (click)="gotoProducts()">
